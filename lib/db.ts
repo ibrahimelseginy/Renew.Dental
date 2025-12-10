@@ -1,6 +1,8 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { Doctor, Slot, Service } from './data';
+export type { Service };
+
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 const DOCTORS_FILE = path.join(DATA_DIR, 'doctors.json');

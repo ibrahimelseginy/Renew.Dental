@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="border-t border-neutral-800 bg-neutral-950 pt-12 pb-8">
+    <footer className="border-t border-neutral-800 bg-neutral-950 pt-3 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Brand & Info */}
@@ -11,9 +11,9 @@ export default function Footer() {
             <Image 
               src="/logo.png" 
               alt="Renew Dental Center" 
-              width={300} 
-              height={120} 
-              className="h-28 w-auto object-contain mb-4"
+              width={800} 
+              height={70} 
+              className="h-20 w-auto object-contain mb-2"
             />
             <p className="text-sm text-white leading-relaxed">
               مركز متخصص في طب وجراحة الفم والأسنان، نستخدم أحدث التقنيات لنمنحك ابتسامة مشرقة وصحية.
@@ -40,7 +40,7 @@ export default function Footer() {
         </div>
 
         {/* Google Map */}
-        <div className="mt-12 overflow-hidden rounded-xl border border-neutral-800">
+        <div className="mt-6 overflow-hidden rounded-xl border border-neutral-800">
           <iframe
             src="https://maps.google.com/maps?q=Faqous%20Al%20Dros%20Street&t=&z=15&ie=UTF8&iwloc=&output=embed"
             width="100%"
@@ -53,7 +53,7 @@ export default function Footer() {
           ></iframe>
         </div>
 
-        <div className="mt-12 border-t border-neutral-800 pt-8 text-center text-sm text-white">
+        <div className="mt-6 border-t border-neutral-800 pt-8 text-center text-sm text-white">
           © {new Date().getFullYear()} Renew Dental Center • جميع الحقوق محفوظة
         </div>
       </div>

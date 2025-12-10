@@ -13,15 +13,26 @@ export default function About() {
       <div className="container mx-auto px-4 relative">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <FadeIn className="flex-1 w-full" direction="right">
-            <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg border border-neutral-700 group">
-                <div className="absolute inset-0 flex items-center justify-center bg-neutral-800 transition-transform duration-700 group-hover:scale-105">
+            <div className="relative h-[400px] md:h-[500px] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-2xl border border-neutral-700 group">
+                {/* Background Gradient/Effect */}
+                <div className="absolute inset-0 bg-gradient-to-b from-neutral-800 via-neutral-900 to-black opacity-90"></div>
+                
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-8 pb-20 transition-transform duration-700 group-hover:scale-105">
                   <Image 
-                    src="/logo.JPG" 
+                    src="/logo.png" 
                     alt="Renew Dental Center" 
-                    width={300} 
-                    height={120} 
-                    className="h-auto w-64 object-contain mix-blend-screen opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                    width={500} 
+                    height={200} 
+                    className="h-auto w-80 md:w-96 object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-500 drop-shadow-2xl"
                   />
+                  <div className="mt-4 text-center space-y-2">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white tracking-wide">
+                      Renew Dental Center
+                    </h3>
+                    <p className="text-primary text-lg md:text-xl font-medium tracking-wider">
+                      Trust the Experts
+                    </p>
+                  </div>
                 </div>
             </div>
           </FadeIn>

@@ -73,25 +73,31 @@ export default function Hero() {
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative mx-auto w-full max-w-[300px] aspect-[3/4] md:max-w-[400px] md:aspect-[4/5] overflow-hidden rounded-2xl bg-gradient-to-b from-neutral-800 to-neutral-900 shadow-2xl border border-neutral-800 flex items-center justify-center group"
+              className="relative mx-auto w-full max-w-[350px] md:max-w-[450px] aspect-[3/4] overflow-hidden rounded-2xl bg-neutral-800 shadow-2xl border border-neutral-700 group"
             >
-              {/* Logo Placeholder - Styled Text */}
-              <div className="flex flex-col items-center justify-center p-8 text-center transition-transform duration-500 group-hover:scale-105">
+              {/* Background Gradient/Effect */}
+              <div className="absolute inset-0 bg-gradient-to-b from-neutral-800 via-neutral-900 to-black opacity-90"></div>
+
+              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 pb-20 transition-transform duration-700 group-hover:scale-105">
                  <div className="relative">
                     <div className="absolute -inset-4 bg-primary/20 blur-xl rounded-full opacity-50 animate-pulse"></div>
                     <Image 
-                      src="/logo.JPG" 
-                      alt="Renew Dental Center Logo" 
-                      width={280} 
-                      height={100} 
-                      className="relative h-auto w-72 object-contain drop-shadow-2xl mix-blend-screen"
+                      src="/logo.png" 
+                      alt="Renew Dental Center" 
+                      width={500} 
+                      height={200} 
+                      className="relative h-auto w-72 md:w-80 object-contain drop-shadow-2xl opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                     />
                  </div>
-              </div>
-              
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6 text-center">
-                <p className="text-xl font-bold text-white">Renew Dental Center</p>
-                <p className="text-sm text-primary">Trust the Experts</p>
+                 
+                 <div className="mt-4 text-center space-y-2 relative z-10">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white tracking-wide">
+                      Renew Dental Center
+                    </h3>
+                    <p className="text-primary text-lg md:text-xl font-medium tracking-wider">
+                      Trust the Experts
+                    </p>
+                 </div>
               </div>
             </motion.div>
           </FadeIn>

@@ -25,7 +25,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-800 bg-neutral-950/95 backdrop-blur-sm">
-      <div className="container mx-auto flex h-28 items-center justify-between px-4 lg:px-8">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 lg:px-8">
         {/* Logo/Name - Right Side (RTL) */}
         <Link href="/" className="flex items-center gap-3 hover:opacity-90 transition-opacity group">
           <Image 
@@ -33,7 +33,7 @@ export default function Navbar() {
             alt="Renew Dental Center" 
             width={300} 
             height={120} 
-            className="h-28 w-auto object-contain"
+            className="h-20 w-auto object-contain"
             priority
           />
         </Link>

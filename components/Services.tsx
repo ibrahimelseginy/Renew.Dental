@@ -28,12 +28,16 @@ export default function Services({ services }: { services: Service[] }) {
           
           return (
             <FadeIn key={service.id} delay={idx * 0.1}>
-              <div className="group relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-900 p-8 shadow-sm hover:shadow-md hover:border-primary/30 transition-all hover:-translate-y-1">
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                  <Icon className="h-6 w-6" />
+              <div className="group relative h-full overflow-hidden rounded-2xl border border-neutral-800 bg-gradient-to-b from-neutral-800/50 to-neutral-900/50 p-8 shadow-lg hover:shadow-primary/10 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 backdrop-blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10">
+                  <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-neutral-800 border border-neutral-700 text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-500 shadow-lg">
+                    <Icon className="h-7 w-7" />
+                  </div>
+                  <h3 className="mb-4 text-xl font-bold text-white group-hover:text-primary transition-colors duration-300">{service.title}</h3>
+                  <p className="text-neutral-400 leading-relaxed group-hover:text-white transition-colors duration-300">{service.description}</p>
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-white">{service.title}</h3>
-                <p className="text-white group-hover:text-white transition-colors">{service.description}</p>
               </div>
             </FadeIn>
           )

@@ -16,7 +16,7 @@ export default function Hero() {
             <h1 className="text-4xl font-bold leading-tight md:text-6xl lg:leading-tight">
               Renew Dental Center
               <span className="block text-2xl md:text-4xl font-medium text-primary mt-4 tracking-wide font-serif">
-                Trust the experts
+                Trust the Experts
               </span>
             </h1>
             <p className="text-lg text-white md:text-xl max-w-2xl mx-auto lg:mx-0">
@@ -24,7 +24,7 @@ export default function Hero() {
             </p>
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
               <Link 
-                href="/search" 
+                href="tel:01068806864" 
                 className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-lg font-semibold text-white shadow hover:bg-primary/90 transition-all hover:scale-105"
               >
                 احجز الآن
@@ -43,32 +43,37 @@ export default function Hero() {
                 <MapPin className="h-5 w-5 text-primary animate-bounce" />
                 <span>فاقوس، شارع الدروس، أعلى ميركاتو</span>
               </p>
-              <p className="flex items-center justify-center lg:justify-start gap-2 text-lg font-semibold">
+              <Link href="tel:01068806864" className="flex items-center justify-center lg:justify-start gap-2 text-lg font-semibold hover:text-primary transition-colors">
                 <Phone className="h-5 w-5 text-primary" />
                 <span dir="ltr">01068806864</span>
-              </p>
+              </Link>
             </div>
             
             {/* Social Icons */}
             <div className="flex justify-center lg:justify-start gap-4 pt-6">
-              {[Facebook, Instagram, Phone].map((Icon, i) => (
-                <motion.div 
-                  key={i} 
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 hover:bg-primary transition-colors cursor-pointer text-white hover:text-white"
-                >
-                  <Icon className="h-5 w-5" />
-                </motion.div>
+              {[
+                { Icon: Facebook, href: "https://www.facebook.com/share/15wiubFiSS/?mibextid=wwXIfr" },
+                { Icon: Instagram, href: "https://www.instagram.com/renewdentalcenter.eg?igsh=MTFyNjNnM3pxbXRkYQ==" },
+                { Icon: Phone, href: "tel:01068806864" }
+              ].map(({ Icon, href }, i) => (
+                <Link key={i} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined}>
+                  <motion.div 
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 hover:bg-primary transition-colors cursor-pointer text-white hover:text-white"
+                  >
+                    <Icon className="h-5 w-5" />
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </FadeIn>
           
           {/* Doctor Image Placeholder */}
-          <FadeIn className="flex-1 relative" direction="left" delay={0.2}>
+          <FadeIn className="flex-1 relative w-full flex justify-center" direction="left" delay={0.2}>
             <motion.div 
               animate={{ y: [0, -15, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative mx-auto h-[400px] w-[300px] md:h-[500px] md:w-[400px] overflow-hidden rounded-2xl bg-gradient-to-b from-neutral-800 to-neutral-900 shadow-2xl border border-neutral-800 flex items-center justify-center group"
+              className="relative mx-auto w-full max-w-[300px] aspect-[3/4] md:max-w-[400px] md:aspect-[4/5] overflow-hidden rounded-2xl bg-gradient-to-b from-neutral-800 to-neutral-900 shadow-2xl border border-neutral-800 flex items-center justify-center group"
             >
               {/* Logo Placeholder - Styled Text */}
               <div className="flex flex-col items-center justify-center p-8 text-center transition-transform duration-500 group-hover:scale-105">
@@ -86,7 +91,7 @@ export default function Hero() {
               
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-6 text-center">
                 <p className="text-xl font-bold text-white">Renew Dental Center</p>
-                <p className="text-sm text-primary">Trust the experts</p>
+                <p className="text-sm text-primary">Trust the Experts</p>
               </div>
             </motion.div>
           </FadeIn>

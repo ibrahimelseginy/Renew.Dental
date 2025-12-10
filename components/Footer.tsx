@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Footer() {
   return (
@@ -8,11 +9,11 @@ export default function Footer() {
           {/* Brand & Info */}
           <div className="space-y-4">
             <Image 
-              src="/logo.JPG" 
+              src="/logo.png" 
               alt="Renew Dental Center" 
-              width={160} 
-              height={50} 
-              className="h-12 w-auto object-contain mb-4 mix-blend-screen"
+              width={300} 
+              height={120} 
+              className="h-28 w-auto object-contain mb-4"
             />
             <p className="text-sm text-white leading-relaxed">
               مركز متخصص في طب وجراحة الفم والأسنان، نستخدم أحدث التقنيات لنمنحك ابتسامة مشرقة وصحية.
@@ -24,7 +25,7 @@ export default function Footer() {
             <h3 className="text-lg font-bold text-white">تواصل معنا</h3>
             <div className="space-y-2 text-sm text-white">
               <p>العنوان: فاقوس، شارع الدروس، أعلى ميركاتو</p>
-              <p dir="ltr" className="text-end text-primary font-semibold">01068806864</p>
+              <Link href="tel:01068806864" dir="ltr" className="block text-end text-primary font-semibold hover:text-white transition-colors">01068806864</Link>
             </div>
           </div>
 
@@ -36,6 +37,20 @@ export default function Footer() {
               <p>الجمعة عطلة رسمية</p>
             </div>
           </div>
+        </div>
+
+        {/* Google Map */}
+        <div className="mt-12 overflow-hidden rounded-xl border border-neutral-800">
+          <iframe
+            src="https://maps.google.com/maps?q=Faqous%20Al%20Dros%20Street&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="300"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="grayscale hover:grayscale-0 transition-all duration-500"
+          ></iframe>
         </div>
 
         <div className="mt-12 border-t border-neutral-800 pt-8 text-center text-sm text-white">

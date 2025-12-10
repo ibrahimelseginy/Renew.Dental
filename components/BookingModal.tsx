@@ -21,8 +21,8 @@ export default function BookingModal({ open, onClose, doctor, slot }: Props) {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
-      <div className="card w-full max-w-lg p-6 animate-in fade-in zoom-in duration-300 bg-neutral-900 border border-neutral-800 shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm overflow-y-auto">
+      <div className="card w-full max-w-lg p-4 md:p-6 animate-in fade-in zoom-in duration-300 bg-neutral-900 border border-neutral-800 shadow-2xl my-auto">
         <h3 className="text-xl font-bold text-white">حجز موعد</h3>
         <p className="mt-1 text-sm text-white">{doctor.name} • {slot ? `${slot.date} الساعة ${slot.time}` : "اختر موعداً"}</p>
         <form
@@ -62,7 +62,7 @@ export default function BookingModal({ open, onClose, doctor, slot }: Props) {
           <div>
             <label className="block text-sm font-medium text-white">اسم المريض</label>
             <input
-              className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-3 py-2 text-white placeholder-neutral-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-3 py-2 text-base md:text-sm text-white placeholder-neutral-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -72,7 +72,7 @@ export default function BookingModal({ open, onClose, doctor, slot }: Props) {
           <div>
             <label className="block text-sm font-medium text-white">رقم الهاتف</label>
             <input
-              className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-3 py-2 text-white placeholder-neutral-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-3 py-2 text-base md:text-sm text-white placeholder-neutral-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required
@@ -82,7 +82,7 @@ export default function BookingModal({ open, onClose, doctor, slot }: Props) {
           <div>
             <label className="block text-sm font-medium text-white">سبب الزيارة</label>
             <textarea
-              className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-3 py-2 text-white placeholder-neutral-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              className="mt-1 w-full rounded-lg border border-neutral-700 bg-neutral-800 px-3 py-2 text-base md:text-sm text-white placeholder-neutral-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               rows={3}
               value={reason}
               onChange={(e) => setReason(e.target.value)}

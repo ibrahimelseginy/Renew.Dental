@@ -4,13 +4,14 @@ import "./globals.css"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import Providers from "../components/Providers"
+import WhatsAppButton from "../components/WhatsAppButton"
 
 const alexandria = Alexandria({ subsets: ["arabic"], variable: "--font-alexandria" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
 
 export const metadata: Metadata = {
-  title: "Renew Dental Center | Trust the experts",
-  description: "Renew Dental Center - Trust the experts. فاقوس شارع الدروس أعلي ميركاتو. للحجز: 01068806864",
+  title: "Renew Dental Center | Trust the Experts",
+  description: "Renew Dental Center - Trust the Experts. فاقوس شارع الدروس أعلي ميركاتو. للحجز: 01068806864",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <Navbar />
           <main className="min-h-screen">{children}</main>
+          <WhatsAppButton />
           <Footer />
         </Providers>
       </body>

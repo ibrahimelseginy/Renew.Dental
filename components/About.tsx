@@ -12,8 +12,8 @@ export default function About() {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 blur-3xl pointer-events-none"></div>
       <div className="container mx-auto px-4 relative">
         <div className="flex flex-col lg:flex-row items-center gap-12">
-          <FadeIn className="flex-1" direction="right">
-            <div className="relative h-[400px] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg border border-neutral-700 group">
+          <FadeIn className="flex-1 w-full" direction="right">
+            <div className="relative h-[300px] md:h-[400px] w-full overflow-hidden rounded-2xl bg-neutral-800 shadow-lg border border-neutral-700 group">
                 <div className="absolute inset-0 flex items-center justify-center bg-neutral-800 transition-transform duration-700 group-hover:scale-105">
                   <Image 
                     src="/logo.JPG" 
@@ -54,10 +54,10 @@ export default function About() {
             </div>
             <div className="pt-4">
                 <Link 
-                href="/search" 
+                href="tel:01068806864" 
                 className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-white shadow hover:bg-primary/90 transition-all hover:scale-105"
               >
-                تواصل معنا
+                احجز الآن
               </Link>
             </div>
           </FadeIn>

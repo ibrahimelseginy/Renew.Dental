@@ -1,5 +1,86 @@
 {
-  "node": {},
+  "node": {
+    "03521dd053e07b74924d1013084aa80156ba8a9b": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cs%5C%5CDownloads%5C%5CRenew.Dental-main%5C%5Capp%5C%5Cactions.ts%22%2C%5B%22deleteServiceAction%22%2C%22getDoctorsAction%22%2C%22saveDoctorAction%22%2C%22deleteAppointmentAction%22%2C%22loginAction%22%2C%22deleteDoctorAction%22%2C%22getServicesAction%22%2C%22saveServiceAction%22%2C%22bookAppointmentAction%22%2C%22logoutAction%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    },
+    "106da03a93ed0fb7f88f5df8155ffe313a3dfb57": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cs%5C%5CDownloads%5C%5CRenew.Dental-main%5C%5Capp%5C%5Cactions.ts%22%2C%5B%22deleteServiceAction%22%2C%22getDoctorsAction%22%2C%22saveDoctorAction%22%2C%22deleteAppointmentAction%22%2C%22loginAction%22%2C%22deleteDoctorAction%22%2C%22getServicesAction%22%2C%22saveServiceAction%22%2C%22bookAppointmentAction%22%2C%22logoutAction%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    },
+    "5066fc8f063ddafa6917e88c5e63c84825824273": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cs%5C%5CDownloads%5C%5CRenew.Dental-main%5C%5Capp%5C%5Cactions.ts%22%2C%5B%22deleteServiceAction%22%2C%22getDoctorsAction%22%2C%22saveDoctorAction%22%2C%22deleteAppointmentAction%22%2C%22loginAction%22%2C%22deleteDoctorAction%22%2C%22getServicesAction%22%2C%22saveServiceAction%22%2C%22bookAppointmentAction%22%2C%22logoutAction%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    },
+    "5a34a146ad52184a292d47f38751b864f9426009": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cs%5C%5CDownloads%5C%5CRenew.Dental-main%5C%5Capp%5C%5Cactions.ts%22%2C%5B%22deleteServiceAction%22%2C%22getDoctorsAction%22%2C%22saveDoctorAction%22%2C%22deleteAppointmentAction%22%2C%22loginAction%22%2C%22deleteDoctorAction%22%2C%22getServicesAction%22%2C%22saveServiceAction%22%2C%22bookAppointmentAction%22%2C%22logoutAction%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    },
+    "79b141d66e807d155c103f9c4c48d1dc0d48f32d": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cs%5C%5CDownloads%5C%5CRenew.Dental-main%5C%5Capp%5C%5Cactions.ts%22%2C%5B%22deleteServiceAction%22%2C%22getDoctorsAction%22%2C%22saveDoctorAction%22%2C%22deleteAppointmentAction%22%2C%22loginAction%22%2C%22deleteDoctorAction%22%2C%22getServicesAction%22%2C%22saveServiceAction%22%2C%22bookAppointmentAction%22%2C%22logoutAction%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    },
+    "98140c72ba12543da7d8f62d73342223783bf709": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cs%5C%5CDownloads%5C%5CRenew.Dental-main%5C%5Capp%5C%5Cactions.ts%22%2C%5B%22deleteServiceAction%22%2C%22getDoctorsAction%22%2C%22saveDoctorAction%22%2C%22deleteAppointmentAction%22%2C%22loginAction%22%2C%22deleteDoctorAction%22%2C%22getServicesAction%22%2C%22saveServiceAction%22%2C%22bookAppointmentAction%22%2C%22logoutAction%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    },
+    "9dbd75bbcb77979eff544521240baf7220e714b1": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cs%5C%5CDownloads%5C%5CRenew.Dental-main%5C%5Capp%5C%5Cactions.ts%22%2C%5B%22deleteServiceAction%22%2C%22getDoctorsAction%22%2C%22saveDoctorAction%22%2C%22deleteAppointmentAction%22%2C%22loginAction%22%2C%22deleteDoctorAction%22%2C%22getServicesAction%22%2C%22saveServiceAction%22%2C%22bookAppointmentAction%22%2C%22logoutAction%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    },
+    "f7bce1ba305fdd05a295e493d10276e0af6ff429": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cs%5C%5CDownloads%5C%5CRenew.Dental-main%5C%5Capp%5C%5Cactions.ts%22%2C%5B%22deleteServiceAction%22%2C%22getDoctorsAction%22%2C%22saveDoctorAction%22%2C%22deleteAppointmentAction%22%2C%22loginAction%22%2C%22deleteDoctorAction%22%2C%22getServicesAction%22%2C%22saveServiceAction%22%2C%22bookAppointmentAction%22%2C%22logoutAction%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    },
+    "f7f12c14082c5b07bd9a7d314c9570547ba67601": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cs%5C%5CDownloads%5C%5CRenew.Dental-main%5C%5Capp%5C%5Cactions.ts%22%2C%5B%22deleteServiceAction%22%2C%22getDoctorsAction%22%2C%22saveDoctorAction%22%2C%22deleteAppointmentAction%22%2C%22loginAction%22%2C%22deleteDoctorAction%22%2C%22getServicesAction%22%2C%22saveServiceAction%22%2C%22bookAppointmentAction%22%2C%22logoutAction%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    },
+    "ff04aeb177b4aa4dbe5b4dbb3dca583f5bfd3ee0": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cs%5C%5CDownloads%5C%5CRenew.Dental-main%5C%5Capp%5C%5Cactions.ts%22%2C%5B%22deleteServiceAction%22%2C%22getDoctorsAction%22%2C%22saveDoctorAction%22%2C%22deleteAppointmentAction%22%2C%22loginAction%22%2C%22deleteDoctorAction%22%2C%22getServicesAction%22%2C%22saveServiceAction%22%2C%22bookAppointmentAction%22%2C%22logoutAction%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser"
+      }
+    }
+  },
   "edge": {},
-  "encryptionKey": "tpobXqvzJbqkAWbkns6+oJmsI7vFnWPzVyYKsV5pYoU="
+  "encryptionKey": "EUuL419QESWfaegJ7pjRCcf2ALyhHhPueKwP0FotB5s="
 }

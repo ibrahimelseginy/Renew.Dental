@@ -57,7 +57,7 @@ export default function Navbar() {
         {/* CTA Button - Desktop */}
         <div className="hidden md:flex items-center gap-4">
           <Link 
-            href="tel:01068806864" 
+            href="#booking" 
             className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-6 text-sm font-medium text-white shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           >
             احجز الآن
@@ -137,7 +137,7 @@ export default function Navbar() {
                 
                 <div className="pt-4 flex justify-end">
                    <Link 
-                    href="tel:01068806864" 
+                    href="#booking" 
                     className="inline-flex h-10 items-center justify-center rounded-md border border-primary bg-transparent px-6 text-base font-medium text-primary shadow-sm transition-colors hover:bg-primary hover:text-white"
                     onClick={closeMenu}
                   >

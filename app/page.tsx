@@ -6,16 +6,19 @@ import Services from "@/components/Services"
 import About from "@/components/About"
 import Cases from "@/components/Cases"
 import ContactBanner from "@/components/ContactBanner"
-import { getServices } from "@/lib/db"
+import BookingSection from "@/components/BookingSection"
+import { getServices, getDoctors } from "@/lib/db"
 
 export default async function HomePage() {
   const services = await getServices()
+  const doctors = await getDoctors()
 
   return (
     <div className="flex flex-col gap-0">
       <Hero />
       <Stats />
       <Services services={services} />
+      <BookingSection doctors={doctors} services={services} />
       <About />
       <Cases />
       <Testimonials />

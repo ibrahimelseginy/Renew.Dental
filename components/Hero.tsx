@@ -24,7 +24,7 @@ export default function Hero() {
             </p>
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
               <Link 
-                href="tel:01068806864" 
+                href="#booking" 
                 className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-lg font-semibold text-white shadow hover:bg-primary/90 transition-all hover:scale-105"
               >
                 احجز الآن

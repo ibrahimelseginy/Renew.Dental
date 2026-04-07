@@ -7,11 +7,11 @@ import About from "@/components/About"
 import Cases from "@/components/Cases"
 import ContactBanner from "@/components/ContactBanner"
 import BookingSection from "@/components/BookingSection"
-import { getServices, getDoctors } from "@/lib/db"
+import { SERVICES, DUMMY_DOCTORS } from "@/lib/data"
 
-export default async function HomePage() {
-  const services = await getServices()
-  const doctors = await getDoctors()
+export default function HomePage() {
+  const services = SERVICES
+  const doctors = DUMMY_DOCTORS
 
   return (
     <div className="flex flex-col gap-0">

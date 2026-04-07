@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Calendar, Clock, User, Phone, CheckCircle2, ChevronRight, ChevronLeft, Stethoscope, ArrowLeft } from "lucide-react"
 import { Doctor, Service, Slot, getAvailableSlots } from "@/lib/data"
-import { bookAppointmentAction } from "@/app/actions"
+
 import { cn } from "@/lib/utils"
 
 interface BookingSectionProps {
@@ -54,14 +54,7 @@ export default function BookingSection({ doctors, services }: BookingSectionProp
     const waUrl = `https://wa.me/201068806864?text=${encodeURIComponent(message)}`
 
     try {
-      await bookAppointmentAction({
-        patientName: name,
-        phone: phone,
-        doctorId: selectedDoctor.id,
-        date: selectedDate,
-        time: selectedSlot.time,
-        reason: selectedService.title
-      })
+
 
       window.open(waUrl, "_blank")
       setStep(4)

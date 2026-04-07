@@ -2,7 +2,7 @@
 import { useState } from "react"
 import type { Doctor, Slot } from "../lib/data"
 import { useToast } from "../context/ToastContext"
-import { bookAppointmentAction } from "../app/actions"
+
 
 type Props = {
   open: boolean
@@ -37,16 +37,18 @@ export default function BookingModal({ open, onClose, doctor, slot }: Props) {
 
             setIsSubmitting(true)
             try {
-              await bookAppointmentAction({
-                patientName: name,
-                doctorId: doctor.id,
-                date: slot.date!,
-                time: slot.time,
-                reason: reason,
-                phone: phone
-              })
+              const message = `*حجز موعد جديد - Renew Dental Center*\n\n` +
+                `👤 *الاسم:* ${name}\n` +
+                `📞 *الهاتف:* ${phone}\n` +
+                `👨‍⚕️ *الطبيب:* ${doctor.name}\n` +
+                `📅 *التاريخ:* ${slot.date}\n` +
+                `⏰ *الوقت:* ${slot.time}\n` +
+                `📋 *السبب:* ${reason}`
+
+              const waUrl = `https://wa.me/201068806864?text=${encodeURIComponent(message)}`
+              window.open(waUrl, "_blank")
               
-              showToast(`تم حجز الموعد بنجاح للسيد/ة ${name}`)
+              showToast(`تم تجهيز طلب الحجز للسيد/ة ${name}`)
               setName("")
               setPhone("")
               setReason("")

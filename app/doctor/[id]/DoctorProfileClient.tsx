@@ -41,7 +41,7 @@ export default function DoctorProfileClient({
      // Filter out booked slots
      return candidates.map(s => ({
         ...s,
-        isAvailable: s.isAvailable && !bookedSlots.some(b => b.date === s.date && b.time === s.time)
+        isAvailable: s.isAvailable && !bookedSlots.some(b => b.date === days[selectedDayIndex].dateStr && b.time === s.time)
      }))
   }, [doctor, days, selectedDayIndex, bookedSlots])
 

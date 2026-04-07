@@ -2,23 +2,23 @@ import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
-    "./app/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./lib/**/*.{ts,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#BF996C", // Updated to match logo identity color
+          DEFAULT: "#BF996C",
           50: "#F9F6F0",
           100: "#F2EBE0",
           200: "#E5D5C1",
-          300: "#D8C0A1",
-          400: "#CBA982",
-          500: "#BF996C",
-          600: "#9E845B",
-          700: "#766344",
+          300: "#D8C0A3",
+          400: "#CCAA87",
+          500: "#BF996C", // Base logo color
+          600: "#A67F51",
+          700: "#805F36",
           800: "#4F422E",
           900: "#272117",
         },
@@ -31,7 +31,26 @@ const config: Config = {
         serif: ["var(--font-playfair)", "serif"],
       },
       boxShadow: {
-        soft: "0 10px 30px -10px rgba(197, 165, 114, 0.15)", // Gold shadow
+        soft: "0 10px 40px -10px rgba(191, 153, 108, 0.2)",
+        glow: "0 0 20px rgba(191, 153, 108, 0.3)",
+      },
+      animation: {
+        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "float": "float 6s ease-in-out infinite",
+        "shimmer": "shimmer 2s linear infinite",
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        shimmer: {
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
@@ -39,4 +58,3 @@ const config: Config = {
 }
 
 export default config
-

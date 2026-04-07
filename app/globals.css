@@ -5,39 +5,73 @@
 :root {
   --bg: 10 10 10;
   --fg: 255 255 255;
+  --primary: 191 153 108; /* #BF996C in RGB */
 }
 
-html, body {
-  height: 100%;
-  font-family: var(--font-alexandria), sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #020617;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(191, 153, 108, 0.08) 0px, transparent 50%),
+      radial-gradient(at 50% 0%, rgba(15, 23, 42, 1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(191, 153, 108, 0.08) 0px, transparent 50%);
+    color: rgb(var(--fg));
+    font-family: var(--font-alexandria), sans-serif;
+    @apply antialiased overflow-x-hidden transition-colors duration-500;
+    line-height: 1.8;
+  }
 }
 
 .font-serif {
   font-family: var(--font-playfair), serif;
 }
 
-body {
-  background-color: rgb(var(--bg));
-  color: rgb(var(--fg));
-}
-
 .container-padded {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-}
-
-.card {
-  @apply bg-neutral-900 rounded-2xl shadow-soft border border-neutral-800;
-}
-
-.btn {
-  @apply inline-flex items-center justify-center rounded-lg px-4 py-2 font-medium transition-colors;
-}
-
-.btn-primary {
-  @apply bg-primary text-white hover:bg-primary-600;
 }
 
 .btn-secondary {
   @apply bg-neutral-800 text-white hover:bg-neutral-700;
 }
 
+.glass {
+  @apply bg-neutral-900/40 backdrop-blur-md border border-white/10;
+}
+
+.card {
+  @apply glass rounded-2xl shadow-soft transition-all duration-300;
+}
+
+.card:hover {
+  @apply border-primary/30 shadow-primary/10 -translate-y-1;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl px-6 py-3 font-semibold transition-all duration-300 active:scale-95;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary-600 shadow-lg shadow-primary/20 relative overflow-hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full skew-x-[-20deg];
+  animation: glint 3s infinite;
+}
+
+@keyframes glint {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  20% { transform: translateX(150%) skewX(-20deg); }
+  100% { transform: translateX(150%) skewX(-20deg); }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-200 via-primary to-primary-600;
+  }
+}

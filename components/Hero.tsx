@@ -3,104 +3,93 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Instagram, Phone, MapPin } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import FadeIn from "@/components/FadeIn"
 
 export default function Hero() {
+  const { scrollY } = useScroll()
+  const y1 = useTransform(scrollY, [0, 500], [0, 200])
+  const y2 = useTransform(scrollY, [0, 500], [0, -150])
+  const opacity = useTransform(scrollY, [0, 300], [1, 0])
+
   return (
-    <section className="relative overflow-hidden bg-neutral-950 text-white min-h-[90vh] flex items-center">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neutral-900 via-neutral-950 to-black opacity-80"></div>
-      <div className="container relative mx-auto px-4 py-12 lg:py-24">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          <FadeIn className="flex-1 space-y-6 text-center lg:text-right" direction="right">
-            <h1 className="text-4xl font-bold leading-tight md:text-6xl lg:leading-tight">
-              Renew Dental Center
-              <span className="block text-2xl md:text-4xl font-medium text-primary mt-4 tracking-wide font-serif">
-                Trust the Experts
-              </span>
-            </h1>
-            <p className="text-lg text-white md:text-xl max-w-2xl mx-auto lg:mx-0">
-              استرجع ابتسامتك وكأنك لم تفقدها أبداً. نستخدم أحدث التقنيات لنمنحك ابتسامة مشرقة وصحية.
-            </p>
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+    <section className="relative min-h-[95vh] flex items-center overflow-hidden pt-20">
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <motion.div 
+          style={{ y: y1 }}
+          className="absolute top-[-10%] right-[-5%] w-[40%] aspect-square bg-primary/10 rounded-full blur-[120px] mix-blend-screen" 
+        />
+        <motion.div 
+          style={{ y: y2 }}
+          className="absolute bottom-[-10%] left-[-5%] w-[30%] aspect-square bg-primary/5 rounded-full blur-[100px] mix-blend-screen" 
+        />
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-10" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4">
+        <div className="max-w-4xl mx-auto text-center space-y-10">
+          {/* Content Side */}
+          <div className="space-y-8">
+            <FadeIn direction="up" delay={0.1}>
+              <div className="inline-flex items-center px-6 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-xs font-bold uppercase tracking-wider mb-6">
+                <span>نثق فـي خبراتنا لابتسامتكم</span>
+              </div>
+              
+              <h1 className="text-6xl md:text-8xl font-bold leading-[1.1] mb-6">
+                <span className="block text-white font-sans">Renew</span>
+                <span className="text-gradient">Dental Center</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-neutral-400 max-w-3xl mx-auto leading-relaxed">
+                اكتشف المعنى الحقيقي لطب الأسنان الحديث. نجمع بين الفن والتكنولوجيا لنرسم ابتسامة تعيد لك الثقة واللمعان.
+              </p>
+            </FadeIn>
+
+            <FadeIn direction="up" delay={0.3} className="flex flex-wrap justify-center gap-5 pt-4">
               <Link 
                 href="#booking" 
-                className="inline-flex h-12 items-center justify-center rounded-md bg-primary px-8 text-lg font-semibold text-white shadow hover:bg-primary/90 transition-all hover:scale-105"
+                className="btn btn-primary px-12 py-4 text-xl group"
               >
-                احجز الآن
+                احجز موعدك الآن
+                <motion.span 
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5 }}
+                  className="mr-2"
+                >
+                  ←
+                </motion.span>
               </Link>
               <Link 
                 href="#services" 
-                className="inline-flex h-12 items-center justify-center rounded-md border border-neutral-700 bg-transparent px-8 text-lg font-semibold text-white hover:bg-white/5 transition-all hover:scale-105"
+                className="btn bg-white/5 border border-white/10 hover:bg-white/10 px-12 py-4 text-xl"
               >
-                خدماتنا
+                خدماتنا المتوفرة
               </Link>
-            </div>
+            </FadeIn>
 
-            {/* Contact Info */}
-            <div className="flex flex-col gap-3 pt-8 text-white">
-              <p className="flex items-center justify-center lg:justify-start gap-2 text-lg">
-                <MapPin className="h-5 w-5 text-primary animate-bounce" />
-                <span>فاقوس، شارع الدروس، أعلى ميركاتو</span>
-              </p>
-              <Link href="tel:01068806864" className="flex items-center justify-center lg:justify-start gap-2 text-lg font-semibold hover:text-primary transition-colors">
-                <Phone className="h-5 w-5 text-primary" />
-                <span dir="ltr">01068806864</span>
-              </Link>
-            </div>
-            
-            {/* Social Icons */}
-            <div className="flex justify-center lg:justify-start gap-4 pt-6">
-              {[
-                { Icon: Facebook, href: "https://www.facebook.com/share/15wiubFiSS/?mibextid=wwXIfr" },
-                { Icon: Instagram, href: "https://www.instagram.com/renewdentalcenter.eg?igsh=MTFyNjNnM3pxbXRkYQ==" },
-                { Icon: Phone, href: "tel:01068806864" }
-              ].map(({ Icon, href }, i) => (
-                <Link key={i} href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noopener noreferrer" : undefined}>
-                  <motion.div 
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-800 hover:bg-primary transition-colors cursor-pointer text-white hover:text-white"
-                  >
-                    <Icon className="h-5 w-5" />
-                  </motion.div>
-                </Link>
-              ))}
-            </div>
-          </FadeIn>
-          
-          {/* Doctor Image Placeholder */}
-          <FadeIn className="flex-1 relative w-full flex justify-center" direction="left" delay={0.2}>
-            <motion.div 
-              animate={{ y: [0, -15, 0] }}
-              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative mx-auto w-full max-w-[350px] md:max-w-[450px] aspect-[3/4] overflow-hidden rounded-2xl bg-neutral-800 shadow-2xl border border-neutral-700 group"
-            >
-              {/* Background Gradient/Effect */}
-              <div className="absolute inset-0 bg-gradient-to-b from-neutral-800 via-neutral-900 to-black opacity-90"></div>
-
-              <div className="absolute inset-0 flex flex-col items-center justify-center p-8 pb-20 transition-transform duration-700 group-hover:scale-105">
-                 <div className="relative">
-                    <div className="absolute -inset-4 bg-primary/20 blur-xl rounded-full opacity-50 animate-pulse"></div>
-                    <Image 
-                      src="/logo.png" 
-                      alt="Renew Dental Center" 
-                      width={500} 
-                      height={200} 
-                      className="relative h-auto w-72 md:w-80 object-contain drop-shadow-2xl opacity-90 group-hover:opacity-100 transition-opacity duration-500"
-                    />
-                 </div>
-                 
-                 <div className="mt-4 text-center space-y-2 relative z-10">
-                    <h3 className="text-2xl md:text-3xl font-bold text-white tracking-wide">
-                      Renew Dental Center
-                    </h3>
-                    <p className="text-primary text-lg md:text-xl font-medium tracking-wider">
-                      Trust the Experts
-                    </p>
-                 </div>
+            {/* Quick Contact */}
+            <FadeIn direction="up" delay={0.5} className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-12">
+              <div className="flex items-center justify-center gap-4 p-6 rounded-3xl bg-white/5 border border-white/5 hover:border-primary/20 transition-all duration-300">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <MapPin className="w-7 h-7" />
+                </div>
+                <div className="text-right">
+                  <p className="text-sm text-neutral-500">موقعنا</p>
+                  <p className="text-white text-lg font-medium">فاقوس، شارع الدروس</p>
+                </div>
               </div>
-            </motion.div>
-          </FadeIn>
+              <div className="flex items-center justify-center gap-4 p-6 rounded-3xl bg-white/5 border border-white/5 hover:border-primary/20 transition-all duration-300">
+                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <Phone className="w-7 h-7" />
+                </div>
+                <div className="text-right">
+                  <p className="text-sm text-neutral-500">اتصل بنا</p>
+                  <p className="text-white text-lg font-medium" dir="ltr">01068806864</p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </div>
     </section>

@@ -40,7 +40,7 @@ export default function BookingModal({ open, onClose, doctor, slot }: Props) {
               await bookAppointmentAction({
                 patientName: name,
                 doctorId: doctor.id,
-                date: slot.date,
+                date: slot.date!,
                 time: slot.time,
                 reason: reason,
                 phone: phone

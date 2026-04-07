@@ -87,7 +87,7 @@ export default function DoctorProfileClient({
         
         {/* Clinic Images */}
         <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-           {doctor.clinicImages.map((src, i) => (
+           {doctor.clinicImages?.map((src, i) => (
              <div key={i} className="relative h-32 w-full overflow-hidden rounded-xl bg-neutral-800 border border-neutral-700">
                <Image src={src} alt="Clinic" fill className="object-cover hover:scale-105 transition-transform duration-300" />
              </div>

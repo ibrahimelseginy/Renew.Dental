@@ -3,7 +3,6 @@ import { Alexandria, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
-import { ToastProvider } from "@/components/ToastProvider"
 
 const alexandria = Alexandria({ 
   subsets: ["arabic", "latin"],
@@ -34,7 +33,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Footer />
-        <ToastProvider />
       </body>
     </html>
   )

@@ -82,7 +82,7 @@ export default function DoctorForm({ doctor }: { doctor?: Doctor }) {
               <label className="block text-sm font-medium text-slate-300 mb-2">رابط الصورة الشخصية</label>
               <input 
                 name="imageUrl" 
-                defaultValue={doctor?.imageUrl} 
+                defaultValue={doctor?.imageUrl as string} 
                 className="w-full rounded-lg bg-neutral-800 border border-neutral-700 px-4 py-3 focus:border-primary focus:outline-none transition-all text-white" 
                 placeholder="https://..." 
               />

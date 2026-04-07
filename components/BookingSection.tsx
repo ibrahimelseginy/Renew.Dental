@@ -189,7 +189,7 @@ export default function BookingSection({ doctors, services }: BookingSectionProp
                             )}
                           >
                             <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white/5 group-hover:border-primary/50 transition-colors">
-                              <img src={doctor.imageUrl} alt={doctor.name} className="w-full h-full object-cover" />
+                              <img src={doctor.imageUrl as string} alt={doctor.name} className="w-full h-full object-cover" />
                             </div>
                             <div className="flex-1">
                               <p className="font-bold text-lg">{doctor.name}</p>

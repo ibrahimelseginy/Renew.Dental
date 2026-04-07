@@ -35,6 +35,7 @@ export interface Slot {
   id: string
   time: string
   isAvailable: boolean
+  date?: string
 }
 
 // Fallback data if DB fetch fails

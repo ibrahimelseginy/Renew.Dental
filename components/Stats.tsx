@@ -30,7 +30,7 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   useEffect(() => {
     springValue.on("change", (latest) => {
       if (ref.current) {
-        ref.current.textContent = Intl.NumberFormat("en-US").format(latest.toFixed(0))
+        ref.current.textContent = Intl.NumberFormat("en-US").format(Math.round(latest))
       }
     })
   }, [springValue])

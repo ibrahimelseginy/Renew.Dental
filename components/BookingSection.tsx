@@ -59,7 +59,7 @@ export default function BookingSection({ doctors, services }: BookingSectionProp
         phone: phone,
         doctorId: selectedDoctor.id,
         date: selectedDate,
-        timeSlot: selectedSlot.time,
+        time: selectedSlot.time,
         reason: selectedService.title
       })
 

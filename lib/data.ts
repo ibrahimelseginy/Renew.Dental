@@ -22,6 +22,15 @@ export interface Service {
   icon: string
 }
 
+export const specialties = [
+  "تجميل وزراعة الأسنان",
+  "تقويم الأسنان",
+  "علاج الجذور",
+  "طب أسنان الأطفال",
+  "جراحة الوجه والفكين",
+  "علاج اللثة",
+]
+
 export interface Slot {
   id: string
   time: string
@@ -77,6 +86,8 @@ export const DUMMY_DOCTORS: Doctor[] = [
     patients: 1800,
   },
 ]
+
+export const doctors = DUMMY_DOCTORS;
 
 export const SERVICES: Service[] = [
   {

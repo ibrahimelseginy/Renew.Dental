@@ -10,7 +10,8 @@ import FadeIn from "@/components/FadeIn"
 const ALL_CASES = [
   { 
     id: 1, 
-    img: "/case1.png", 
+    beforeImg: "/case1_before.png", 
+    afterImg: "/case1_after.png", 
     title: "حالة تجميل كاملة", 
     category: "تجميل الأسنان",
     desc: "تم استخدام الفينير الرقمي لإصلاح تناسق الفكين وابتسامة هوليود بشكل كامل وطبيعي.",
@@ -18,7 +19,8 @@ const ALL_CASES = [
   },
   { 
     id: 2, 
-    img: "/case2.png", 
+    beforeImg: "/case2_before.png", 
+    afterImg: "/case2_after.png", 
     title: "إغلاق الفراغات", 
     category: "حشوات تجميلية",
     desc: "تصحيح الفراغات بين الأسنان باستخدام الحشوات التجميلية بشكل طبيعي في جلسة واحدة.",
@@ -26,7 +28,8 @@ const ALL_CASES = [
   },
   { 
     id: 3, 
-    img: "/case3.png", 
+    beforeImg: "/case3_before.png", 
+    afterImg: "/case3_after.png", 
     title: "زراعة الأسنان", 
     category: "زراعة الأسنان",
     desc: "تعويض الأسنان المفقودة بزراعات ذات جودة عالية ومظهر طبيعي تماماً.",
@@ -80,7 +83,7 @@ export default function CasesPage() {
                 className="relative aspect-[16/11] overflow-hidden rounded-[32px] bg-neutral-900 border border-white/5 cursor-pointer"
               >
                 <Image 
-                  src={item.img} 
+                  src={item.afterImg} 
                   alt={item.title} 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -155,13 +158,25 @@ export default function CasesPage() {
                 <X className="w-6 h-6" />
               </button>
 
-              <div className="w-full md:w-1/2 relative bg-neutral-950 min-h-[300px]">
-                <Image 
-                  src={selectedCase.img} 
-                  alt={selectedCase.title} 
-                  fill 
-                  className="object-cover"
-                />
+              <div className="w-full md:w-1/2 flex flex-col gap-2 p-6 bg-neutral-950">
+                <div className="flex-1 relative min-h-[250px] rounded-2xl overflow-hidden border border-white/5">
+                  <Image 
+                    src={selectedCase.beforeImg} 
+                    alt="Before" 
+                    fill 
+                    className="object-cover"
+                  />
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-[10px] text-white/80 font-bold uppercase tracking-widest border border-white/10">قبل</div>
+                </div>
+                <div className="flex-1 relative min-h-[250px] rounded-2xl overflow-hidden border border-primary/20">
+                  <Image 
+                    src={selectedCase.afterImg} 
+                    alt="After" 
+                    fill 
+                    className="object-cover"
+                  />
+                  <div className="absolute top-4 right-4 px-3 py-1 bg-primary backdrop-blur-md rounded-full text-[10px] text-white font-bold uppercase tracking-widest">بعد</div>
+                </div>
               </div>
 
               <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center space-y-8 overflow-y-auto">

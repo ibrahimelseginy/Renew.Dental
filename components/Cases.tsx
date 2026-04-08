@@ -11,9 +11,9 @@ export default function Cases() {
   const [selectedCase, setSelectedCase] = useState<any>(null)
 
   const cases = [
-    { id: 1, img: "/case1.png", title: "حالة تجميل كاملة", desc: "تم استخدام الفينير الرقمي لإصلاح تناسق الفكين وابتسامة هوليود." },
-    { id: 2, img: "/case2.png", title: "إغلاق الفراغات", desc: "تصحيح الفراغات بين الأسنان باستخدام الحشوات التجميلية بشكل طبيعي." },
-    { id: 3, img: "/case3.png", title: "زراعة الأسنان", desc: "تعويض الأسنان المفقودة بزراعات ذات جودة عالية ومظهر طبيعي تماماً." }
+    { id: 1, beforeImg: "/case1_before.png", afterImg: "/case1_after.png", title: "حالة تجميل كاملة", desc: "تم استخدام الفينير الرقمي لإصلاح تناسق الفكين وابتسامة هوليود." },
+    { id: 2, beforeImg: "/case2_before.png", afterImg: "/case2_after.png", title: "إغلاق الفراغات", desc: "تصحيح الفراغات بين الأسنان باستخدام الحشوات التجميلية بشكل طبيعي." },
+    { id: 3, beforeImg: "/case3_before.png", afterImg: "/case3_after.png", title: "زراعة الأسنان", desc: "تعويض الأسنان المفقودة بزراعات ذات جودة عالية ومظهر طبيعي تماماً." }
   ]
 
   return (
@@ -59,7 +59,7 @@ export default function Cases() {
                 className="relative aspect-[16/10] overflow-hidden rounded-[40px] bg-neutral-900 border border-white/5 shadow-2xl cursor-pointer"
               >
                 <Image 
-                  src={item.img} 
+                  src={item.afterImg} 
                   alt={item.title} 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -141,16 +141,24 @@ export default function Cases() {
                 </button>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="relative aspect-square lg:aspect-auto h-full min-h-[400px]">
-                    <Image 
-                      src={selectedCase.img} 
-                      alt={selectedCase.title} 
-                      fill 
-                      className="object-cover"
-                    />
-                    <div className="absolute bottom-6 right-6 flex gap-3">
-                      <span className="px-4 py-2 bg-black/60 backdrop-blur-md rounded-full text-xs text-white/80 font-bold uppercase tracking-widest border border-white/10">قبل</span>
-                      <span className="px-4 py-2 bg-primary backdrop-blur-md rounded-full text-xs text-white font-bold uppercase tracking-widest shadow-glow">بعد</span>
+                  <div className="flex flex-col gap-2 p-6 bg-neutral-950">
+                    <div className="flex-1 relative min-h-[200px] rounded-2xl overflow-hidden border border-white/5">
+                      <Image 
+                        src={selectedCase.beforeImg} 
+                        alt="Before" 
+                        fill 
+                        className="object-cover"
+                      />
+                      <div className="absolute top-4 right-4 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-[10px] text-white/80 font-bold uppercase tracking-widest border border-white/10">قبل</div>
+                    </div>
+                    <div className="flex-1 relative min-h-[200px] rounded-2xl overflow-hidden border border-primary/20">
+                      <Image 
+                        src={selectedCase.afterImg} 
+                        alt="After" 
+                        fill 
+                        className="object-cover"
+                      />
+                      <div className="absolute top-4 right-4 px-3 py-1 bg-primary backdrop-blur-md rounded-full text-[10px] text-white font-bold uppercase tracking-widest">بعد</div>
                     </div>
                   </div>
 

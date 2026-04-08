@@ -3,6 +3,8 @@ import { Alexandria, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import { ToastProvider } from "@/context/ToastContext"
+import { AppointmentProvider } from "@/context/AppointmentContext"
 
 const alexandria = Alexandria({ 
   subsets: ["arabic", "latin"],
@@ -28,11 +30,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ar" dir="rtl" className={`${alexandria.variable} ${playfair.variable} scroll-smooth`}>
       <body className="font-sans antialiased bg-black min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+        <ToastProvider>
+          <AppointmentProvider>
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+          </AppointmentProvider>
+        </ToastProvider>
       </body>
     </html>
   )
